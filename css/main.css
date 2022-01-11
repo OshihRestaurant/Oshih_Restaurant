@@ -104,6 +104,9 @@ html {
     margin: 0 auto;
     display: flex;
 }
+.none {
+    display: none !important;
+}
 .pop-up div p {
     font-size: 22px;
     font-weight: bold;
