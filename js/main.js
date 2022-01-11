@@ -1,6 +1,4 @@
 
-
-
 // Header //
 let header = document.querySelector('header');
 let linksSection = document.querySelectorAll('header ul li');
@@ -52,6 +50,7 @@ function showHeade (el) {
 // PopUp Out Time
 let PopUp = document.getElementById('time-out');
 let body = document.querySelector('body');
+let iconClose = document.querySelector('#time-out > i');
 let dat = new Date();
 
 if (dat.getHours() < 16 && dat.getHours() > 2) {
@@ -60,9 +59,15 @@ if (dat.getHours() < 16 && dat.getHours() > 2) {
     closePopUp(PopUp);
 }
 
+iconClose.addEventListener('click', () => {
+    PopUp.className.add('none');
+})
+
 function openPopUp(el) {
     el.style.display = 'flex';
+    el.classList.remove('none');
 }
 function closePopUp(el) {
     el.style.display = 'none';
+    el.classList.add('none');
 }
