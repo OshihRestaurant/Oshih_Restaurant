@@ -48,28 +48,3 @@ function showHeade (el) {
         el.classList.remove('show');
     }
 }
-
-// PopUp Out Time
-let PopUp = document.getElementById('time-out');
-let body = document.querySelector('body');
-let iconClose = document.querySelector('#time-out > i');
-let dat = new Date();
-
-if (dat.getHours() < 16 && dat.getHours() > 2) {
-    openPopUp(PopUp);
-} else {
-    closePopUp(PopUp);
-}
-
-iconClose.addEventListener('click', () => {
-    closePopUp(PopUp);
-})
-
-function openPopUp(el) {
-    el.style.display = 'flex';
-    el.classList.remove('none');
-}
-function closePopUp(el) {
-    el.style.display = 'none';
-    el.classList.add('none');
-}
