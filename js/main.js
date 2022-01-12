@@ -24,6 +24,18 @@ window.addEventListener('scroll', () => {
     }
 })
 
+// Open Header Automatic
+setTimeout(openHeaderAuto, 3000);
+
+function openHeaderAuto () {
+    header.classList.add('header-open');
+    function closeHeaderAuto () {
+    header.classList.remove('header-open');
+    }
+    // Close Header Automatic
+    setTimeout(closeHeaderAuto, 1300)
+}
+
 // Selected Item //
 let items = document.querySelectorAll('.item');
 
