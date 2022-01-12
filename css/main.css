@@ -236,6 +236,14 @@ header .web-map p {
     margin: 0 auto;
     color: var(--main-background);
     cursor: pointer;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.header-open .web-map p {
+    font-weight: bold;
 }
 header .web-map p i {
     font-size: 25px;
