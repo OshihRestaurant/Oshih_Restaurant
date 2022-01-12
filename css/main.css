@@ -30,9 +30,9 @@ html {
     z-index: 1000;
     color: var(--main-background);
     cursor: pointer;
-    transition: var(--main-transition);
     animation: show-head .3s linear infinite;
     -webkit-animation: show-head 1.5s linear infinite;
+    transition: var(--main-transition);
     -webkit-transition: var(--main-transition);
     -moz-transition: var(--main-transition);
     -ms-transition: var(--main-transition);
@@ -43,86 +43,32 @@ html {
         color: var(--background-alt);
     }
 }
-.pop-up {
-    max-width: 95%;
-    width: 600px;
-    height: 250px;
-    padding: 20px;
-    background-color: var(--background-alt);
-    border: 10px solid var(--main-background);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 1200;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
+@keyframes rotat-phone {
+    from {
+        opacity: 1;
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
 }
-.pop-up::before {
-    content: '';
-    width: 100vw;
-    height: 100vh;
-    background-color: #ffffffb8;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    z-index: -4;
 }
-.pop-up i {
-    position: absolute;
-    top: 25px;
-    left: 20px;
-    font-size: 30px;
+.call-now {
+    font-size: 45px;
     color: black;
-    cursor: pointer;
-}
-.pop-up > p {
-    width: fit-content;
-    margin: 40px auto;
-    font-size: 25px;
-    font-weight: bold;
-    color: var(--main-background);
-}
-@media (max-width: 768px) {
-    .pop-up > p {
-        margin-top: 55px;
-        font-size: 20px;
-    } 
-}
-.pop-up div {
-    width: fit-content;
-    margin: 0 auto;
-    display: flex;
-}
-.none {
-    display: none !important;
-}
-.pop-up div p {
-    font-size: 22px;
-    font-weight: bold;
-    margin-left: 10px;
-}
-@media (max-width: 768px) {
-    .pop-up div p {
-        font-size: 18px;
-    } 
-}
-.pop-up div span {
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--main-background);
-    margin-left: 2px;
-}
+    z-index: 500;
+    opacity: .8;
+    position: fixed;
+    bottom: 65px;
+    right: 10px;
+    animation: rotat-phone 1s .6s ease-out infinite;
+    -webkit-animation: rotat-phone 1s .6s ease-out infinite;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+} 
 .section-name {
     width: 90%;
     margin: 30px auto;
@@ -211,13 +157,13 @@ html {
 
 header {
     width: 100%;
-    height: 58px;
+    max-height: 58px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: var(--main-background);
-    border: 5px solid white;
+    background-color: var(--background-alt);
+    border-bottom: 5px solid var(--main-background);
     z-index: 1000;
-    overflow: hidden;
+    overflow: hidden ;
     transition: var(--main-transition);
     -webkit-transition: var(--main-transition);
     -moz-transition: var(--main-transition);
@@ -225,7 +171,8 @@ header {
     -o-transition: var(--main-transition);
 }
 .header-open {
-    height: 395px;
+    height: fit-content;
+    max-height: 500px;
 }
 .header-fixed {
     position: fixed;
@@ -235,18 +182,59 @@ header .container {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+header .container::before {
+    content: '';
+    width: 300px;
+    height: 300px;
+    opacity: .2;
+    background-color: var(--main-background);
+    box-shadow: 6px 8px 20px 20px white;
+    z-index: 1;
+    position: absolute;
+    left: -200px;
+    top: 49px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+header .container::after {
+    content: '';
+    width: 300px;
+    height: 300px;
+    opacity: .2;
+    background-color: var(--main-background);
+    box-shadow: 6px 8px 20px 20px white;
+    z-index: 1;
+    position: absolute;
+    right: -200px;
+    top: 49px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    
 }
 header .web-map {
     max-width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
+    z-index: 2;
 }
 header .web-map p {
-    font-size: 28px;
+    flex-basis: 100%;
     width: fit-content;
+    text-align: center;
+    font-size: 28px;
     margin: 0 auto;
-    color: white;
+    color: var(--main-background);
     cursor: pointer;
 }
 header .web-map p i {
@@ -267,25 +255,33 @@ header .web-map p i {
 }
 header .web-map li {
     text-align: center;
+    flex-basis: 48%;
 }
 header .web-map li a {
-    padding: 5px;
-    color: var(--main-color);
+    padding: 15px 0;
     font-weight: bold;
     font-size: 18px;
+    color: var(--main-color);
+    border: 4px solid transparent;
+    background-color: var(--main-background);
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 4px solid var(--main-color);
     transition: var(--main-transition);
     -webkit-transition: var(--main-transition);
     -moz-transition: var(--main-transition);
     -ms-transition: var(--main-transition);
     -o-transition: var(--main-transition);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 header .web-map li a:hover {
     color: var(--main-background);
     background-color: var(--main-color);
+    border: 4px solid var(--main-background);
 }
 /* End Header */
 
