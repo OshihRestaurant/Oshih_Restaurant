@@ -25,7 +25,7 @@ window.addEventListener('scroll', () => {
 })
 
 // Open Header Automatic
-setTimeout(openHeaderAuto, 3000);
+setTimeout(openHeaderAuto, 1500);
 
 function openHeaderAuto () {
     header.classList.add('header-open');
