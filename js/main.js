@@ -1,4 +1,6 @@
 
+
+
 // Header //
 let header = document.querySelector('header');
 let linksSection = document.querySelectorAll('header ul li');
@@ -60,7 +62,7 @@ if (dat.getHours() < 16 && dat.getHours() > 2) {
 }
 
 iconClose.addEventListener('click', () => {
-    PopUp.className.add('none');
+    closePopUp(PopUp);
 })
 
 function openPopUp(el) {
