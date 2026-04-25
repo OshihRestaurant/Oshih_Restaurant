@@ -990,3 +990,25 @@ header .web-map li a:hover {
 
 
 /* End Section 7 */
+/* ===== تعديل خلفيات المنيو (ذهبي) ===== */
+
+/* شاورما */
+.section-1::before {
+    background-image: url("../imgs/shawarma.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* بروستد */
+.section-2::before {
+    background-image: url("../imgs/broasted.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* مشويات */
+.section-3::before {
+    background-image: url("../imgs/grill.jpg");
+    background-size: cover;
+    background-position: center;
+}
